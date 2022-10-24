@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/itop1000_task/static/css/main.528e1179.css",
+    "main.js": "/itop1000_task/static/js/main.99245234.js",
+    "index.html": "/itop1000_task/index.html",
+    "main.528e1179.css.map": "/itop1000_task/static/css/main.528e1179.css.map",
+    "main.99245234.js.map": "/itop1000_task/static/js/main.99245234.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.528e1179.css",
+    "static/js/main.99245234.js"
+  ]
+}
