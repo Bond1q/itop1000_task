@@ -1,0 +1,38 @@
+.header {
+   max-width: 1000px;
+   // background: #dfefff;
+   display: flex;
+   align-items: center;
+   border-top-right-radius: 5px;
+   font-size: 1.25rem;
+   padding: 20px;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+
+   .title {
+      margin-right: 3rem;
+      color: #262626;
+      font-weight: 500;
+   }
+
+   .rates {
+      // margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      color: #0a72c1;
+      justify-content: space-between;
+      // width: 250px;
+      font-weight: 500;
+
+      .cur {
+         margin-right: 0.5rem;
+      }
+   }
+
+   .active {
+      background: #fff;
+      color: #1c94ef;
+   }
+}

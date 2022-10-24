@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+
+import Converter from './components/Converter/Converter'
+import Header from './components/Header/Header'
+import Loader from './components/Loader/Loader'
+import { requestRate, requestSymbols } from './utils/api/api'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   const [symbols, setSymbols] = useState({})
+   const [isLoading, setIsLoading] = useState(true)
+
+   const getRate = async (from, to, amount) => {
+      const res = await requestRate(from)
+      return res[from][to] * amount
+   }
+
+   useEffect(() => {
+      const getSymbols = async () => {
+         const res = await requestSymbols()
+         setSymbols(res)
+      }
+      setIsLoading(true)
+      getSymbols()
+      setIsLoading(false)
+   }, [])
+
+   return (
+      <div className='App'>
+         {isLoading ? (
+            <Loader />
+         ) : (
+            <>
+               <Header getRate={getRate} />
+
+               <Converter getRate={getRate} symbols={symbols} />
+            </>
+         )}
+      </div>
+   )
 }
 
-export default App;
+export default App

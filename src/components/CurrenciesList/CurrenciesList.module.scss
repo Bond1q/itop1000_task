@@ -1,0 +1,43 @@
+.currenciesList {
+   position: absolute;
+   width: 220px;
+   top: 35px;
+   left: -50px;
+   max-height: 250px;
+   overflow-y: auto;
+   background: rgb(255, 255, 255);
+   box-shadow: rgba(112, 112, 112, 0.3) 0px 6px 12px;
+   opacity: 0;
+   pointer-events: none;
+   transform: translateY(-15px);
+   transform: scale(0.95);
+   transition: 300ms;
+
+   .currency {
+      padding: 10px;
+      display: grid;
+      grid-template-columns: 35px 10px 1fr;
+      gap: 5px;
+
+      span {
+         font-size: 0.9rem;
+         text-align: left;
+
+         &:first-child {
+            text-transform: uppercase;
+         }
+      }
+
+      &:hover {
+         background: rgb(245, 245, 245);
+         cursor: pointer;
+      }
+   }
+}
+
+.active {
+   opacity: 1;
+   pointer-events: all;
+   transform: translateY(0px);
+   transition: 300ms;
+}
